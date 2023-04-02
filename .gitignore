@@ -1,0 +1,64 @@
+# Maven build artifacts
+/target
+dependency-reduced-pom.xml
+
+# Vim undo files
+*.un~
+
+# Intellij files
+*.iml
+.idea/
+
+# Make sure profiling artifacts are committed
+*.class
+
+# Project logs files
+/logs
+
+# From Angular CLI output
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+node/
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/src/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.angular/*
+
+# System Files
+.DS_Store
+Thumbs.db
+*.pid
+
+# Generated development code.
+/src/main/java/org/raescott/generated/
