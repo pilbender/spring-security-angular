@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,9 @@ import {HttpClient} from "@angular/common/http";
 export class AppComponent {
   title = 'spring-security-angular-frontend';
   greeting: Object = {'id': 'XXX', 'content': 'Hello World'};
+  /*
   constructor(private http: HttpClient) {
     http.get('resource').subscribe(data => this.greeting = data);
   }
+   */
 }
