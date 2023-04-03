@@ -78,4 +78,53 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>npm</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>1.12.1</version>
+            <configuration>
+              <nodeVersion>v14.16.1</nodeVersion>
+            </configuration>
+            <executions>
+              <execution>
+                <id>install-npm</id>
+                <goals>
+                  <goal>install-node-and-npm</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>npm install</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>npm-build --configuration production</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <configuration>
+                  <!-- Non-optimized build -->
+                  <!--
+                  <arguments>run build</arguments>
+                  -->
+                  <!-- Optimized build -->
+                  <arguments>run build-prod</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
