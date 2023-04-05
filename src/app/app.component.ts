@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {AppService} from "./app.service";
 
 @Component({
 	selector: 'app-root',
@@ -10,6 +11,11 @@ export class AppComponent {
 	title = 'spring-security-angular-frontend';
 	greeting: Object = {};
 
-	constructor(private http: HttpClient) {
+	constructor(private http: HttpClient,
+				private appService: AppService) {
+	}
+
+	logout() {
+		this.appService.logout();
 	}
 }

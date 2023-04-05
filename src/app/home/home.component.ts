@@ -13,13 +13,21 @@ export class HomeComponent implements OnInit {
 	greeting = {};
 
 	constructor(private app: AppService, private http: HttpClient) {
-		http.get('basic/resource').subscribe(data => this.greeting = data);
+		http.get('basic/resource').subscribe(data => {
+			this.greeting = data;
+			if (data) {
+				this.app.authenticated = true;
+			} else {
+				this.app.authenticated = false;
+			}
+		});
 	}
 
 	ngOnInit() {
 	}
 
 	authenticated() {
+		console.log("authenticated: " + this.app.authenticated);
 		return this.app.authenticated;
 	}
 }

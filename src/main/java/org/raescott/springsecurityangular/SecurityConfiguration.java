@@ -38,6 +38,7 @@ public class SecurityConfiguration {
 						"/",
 						"/home",
 						"/login",
+						"/logout",
 						"/static/**",
 						"/**/*.js",
 						"/**/*.css",
@@ -50,7 +51,10 @@ public class SecurityConfiguration {
 					).permitAll()
 					.requestMatchers("/**").authenticated();
 			})
-			.formLogin(withDefaults());
+			.formLogin(withDefaults())
+			.logout().logoutUrl("/")
+			.and()
+			.csrf().disable();
 		return http.build();
 	}
 }
