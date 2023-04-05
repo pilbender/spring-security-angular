@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 	greeting = {};
 
 	constructor(private app: AppService, private http: HttpClient) {
-		http.get('resource').subscribe(data => this.greeting = data);
+		http.get('basic/resource').subscribe(data => this.greeting = data);
 	}
 
 	ngOnInit() {

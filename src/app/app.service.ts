@@ -18,6 +18,7 @@ export class AppService {
 		} : {});
 
 		this.http.get('user', {headers: headers}).subscribe(response => {
+			console.log("response: " + response);
 			if (response['name']) {
 				this.authenticated = true;
 			} else {
@@ -26,5 +27,11 @@ export class AppService {
 			return callback && callback();
 		});
 
+	}
+
+	logout() {
+		this.http.post('logout', {}).subscribe(() => {
+			this.authenticated = false;
+		});
 	}
 }

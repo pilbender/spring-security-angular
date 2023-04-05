@@ -11,18 +11,5 @@ export class AppComponent {
 	greeting: Object = {};
 
 	constructor(private http: HttpClient) {
-		http.get('resource').subscribe(data => {
-			console.log(data);
-			this.greeting = data;
-		});
-	}
-
-	logout() {
-		/*
-		this.http.post('logout', {}).finally(() => {
-			this.app.authenticated = false;
-			this.router.navigateByUrl('/login');
-		}).subscribe();
-		 */
 	}
 }
