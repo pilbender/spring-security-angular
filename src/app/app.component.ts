@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AppService} from "./app.service";
+import {Router} from "@angular/router";
 
 @Component({
 	selector: 'app-root',
@@ -12,10 +13,13 @@ export class AppComponent {
 	greeting: Object = {};
 
 	constructor(private http: HttpClient,
-				private appService: AppService) {
+				private appService: AppService,
+				private router: Router) {
 	}
 
 	logout() {
+		console.log("logout");
 		this.appService.logout();
+		this.router.navigateByUrl("/login");
 	}
 }

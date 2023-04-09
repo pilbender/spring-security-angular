@@ -34,9 +34,10 @@ export class AppService {
 
 	logout() {
 		console.log("logout");
-		this.http.post('logout', this.httpOptionsService.httpOptions).subscribe(() => {
+		this.authenticated = false;
+		/*this.http.get('logout', this.httpOptionsService.httpOptions).subscribe(() => {
 			console.log("are we logging out?");
 			this.authenticated = false;
-		});
+		});*/
 	}
 }

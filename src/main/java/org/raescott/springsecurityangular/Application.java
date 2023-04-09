@@ -1,8 +1,12 @@
 package org.raescott.springsecurityangular;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +20,7 @@ import java.util.Map;
 @SpringBootApplication
 @RestController
 public class Application {
+	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
@@ -36,6 +41,11 @@ public class Application {
 	 */
 	@RequestMapping("user")
 	public Principal user(Principal user) {
+		if (user != null) {
+			logger.info("user: {}", user.getName());
+		} else {
+			logger.info("user: {}", user);
+		}
 		return user;
 	}
 }
