@@ -23,6 +23,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 mvn clean install -Pnpm
 ```
 
+## Debug
+```
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.config.location=file:src/main/resources/application.properties -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -jar target/spring-security-angular-1.0.0-SNAPSHOT.jar
+```
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
