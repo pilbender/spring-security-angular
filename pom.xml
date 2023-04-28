@@ -72,6 +72,12 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>6.0.2</version>
 		</dependency>
+		<!-- This is all that's needed to make swagger work -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
