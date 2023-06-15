@@ -1,6 +1,4 @@
-# SpringSecurityAngularFrontend
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+# Spring Security Angular Frontend
 
 ## Development server
 
@@ -16,16 +14,34 @@ ng build --configuration development --watch <-- Does work right now.
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
+### Full Build
+Build the full project, frontend and backend
 ```
 mvn clean install -Pnpm
 ```
 
-## Debug
+### Frontend only
+To build the project.
 ```
-mvn spring-boot:run -Dspring-boot.run.arguments="--spring.config.location=file:src/main/resources/application.properties -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+ng build
+```
+or to watch the frontend for changes
+```
+ng build --watch
+```
+
+### Backend only
+```
+mvn clean install
+```
+
+## Debug
+This can be used in conjuction with 
+```
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.config.location=file:src/main/resources/application.properties" -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+```
+Or
+```
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -jar target/spring-security-angular-1.0.0-SNAPSHOT.jar
 ```
 
