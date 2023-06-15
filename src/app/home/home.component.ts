@@ -10,7 +10,7 @@ import {HttpClient} from "@angular/common/http";
 export class HomeComponent implements OnInit {
 
 	title = 'Demo';
-	greeting = {};
+	greeting: Greeting;
 
 	constructor(private app: AppService, private http: HttpClient) {
 		http.get('basic/resource').subscribe(data => {

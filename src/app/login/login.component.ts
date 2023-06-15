@@ -10,8 +10,11 @@ import {HttpClient} from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
 	credentials = {username: '', password: ''};
+	error;
 
-	constructor(private app: AppService, private http: HttpClient, private router: Router) {
+	constructor(private app: AppService,
+				private http: HttpClient,
+				private router: Router) {
 	}
 
 	ngOnInit() {

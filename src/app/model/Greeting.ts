@@ -1,0 +1,3 @@
+interface Greeting {
+	content?: string;
+}
